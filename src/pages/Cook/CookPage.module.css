@@ -1,0 +1,268 @@
+.root {
+  min-height: 100vh;
+  padding: 28px 30px 40px;
+  background:
+    radial-gradient(circle at top right, rgba(212, 41, 12, 0.08), transparent 28%),
+    linear-gradient(180deg, #fbf6ee 0%, #f4ecdf 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.topBar {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.backBtn {
+  border: 1px solid #dbcdb5;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--charcoal);
+  border-radius: 14px;
+  padding: 11px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 34px;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+.offlineTag {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #d4290c;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: var(--slate);
+  font-size: 14px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: var(--charcoal);
+}
+
+.sectionCount {
+  min-width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--olive-green);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.orderGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.orderCard,
+.emptyCard {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #e3d7c1;
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 14px 28px rgba(87, 62, 35, 0.08);
+}
+
+.emptyCard {
+  color: var(--slate);
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.cardHead {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eee1cd;
+}
+
+.orderMetaRow,
+.orderSubRow,
+.itemRow,
+.itemActions {
+  display: flex;
+  align-items: center;
+}
+
+.orderMetaRow,
+.orderSubRow,
+.itemRow {
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.checkWrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.checkWrap input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--olive-green);
+}
+
+.orderNo {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.sourceBadge {
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: #fff3e0;
+  color: #c35d0a;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.orderSubRow {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  color: var(--slate);
+  font-size: 12px;
+}
+
+.orderSubRow span {
+  position: relative;
+  padding-right: 10px;
+}
+
+.orderSubRow span:not(:last-child)::after {
+  content: '•';
+  position: absolute;
+  right: 1px;
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 14px;
+}
+
+.itemRowWrap {
+  border: 1px solid #efe5d5;
+  border-radius: 16px;
+  background: #fffdf9;
+}
+
+.itemRow {
+  padding: 12px 14px;
+}
+
+.itemName {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.itemQty {
+  margin-top: 3px;
+  font-size: 12px;
+  color: var(--slate);
+}
+
+.itemActions {
+  gap: 10px;
+}
+
+.itemPrice {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--olive-green);
+}
+
+.expandBtn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #e4d5bf;
+  background: #fff;
+  color: var(--charcoal);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.recipePanel {
+  border-top: 1px solid #efe5d5;
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #fdf7ec;
+}
+
+.recipeLine {
+  font-size: 13px;
+  color: var(--charcoal);
+}
+
+@media (max-width: 700px) {
+  .root {
+    padding: 20px 16px 30px;
+  }
+
+  .topBar {
+    flex-direction: column;
+  }
+
+  .orderGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .orderMetaRow,
+  .itemRow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .itemActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

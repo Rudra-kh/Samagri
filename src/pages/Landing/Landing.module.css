@@ -1,0 +1,124 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.root::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background-image: url('/dashboard-options-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  opacity: 0.9;
+}
+
+.root::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(250, 247, 242, 0.72);
+}
+
+.card {
+  background: var(--off-white);
+  border-radius: 28px;
+  padding: 48px 40px 56px;
+  max-width: 860px;
+  width: 100%;
+  box-shadow: 0 8px 40px rgba(139, 111, 78, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoMark {
+  width: 96px;
+  height: 96px;
+  filter: drop-shadow(0 6px 16px rgba(70, 55, 20, 0.22));
+}
+
+.brandName {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--charcoal);
+  letter-spacing: -0.02em;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--charcoal);
+  text-align: center;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.optionBtn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px 20px;
+  border-radius: 20px;
+  border: 2px solid var(--border-light);
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.optionBtn:hover {
+  border-color: var(--olive-green);
+  box-shadow: 0 6px 24px rgba(92, 107, 58, 0.15);
+  transform: translateY(-4px);
+}
+
+.optionBtn:active {
+  transform: translateY(-1px);
+}
+
+.optionIcon {
+  color: var(--olive-green);
+}
+
+.optionLabel {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+@media (max-width: 820px) {
+  .card {
+    max-width: 560px;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+  }
+}

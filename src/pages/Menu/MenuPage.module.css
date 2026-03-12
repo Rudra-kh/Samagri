@@ -1,0 +1,302 @@
+.root {
+  padding: 24px 28px;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pageHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.headActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Form */
+.formCard {
+  padding: 24px 26px;
+  animation: fadeIn 0.2s ease;
+  border-left: 3px solid var(--muted-green-light);
+}
+
+.formTitle {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: var(--charcoal);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formBody {
+  display: flex;
+  gap: 20px;
+}
+
+.formFields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formRow {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.formRow > * { min-width: 120px; }
+
+.imageUploadArea {
+  width: 160px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.imageUploadLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 150px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--slate);
+  text-align: center;
+  padding: 12px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.imageUploadLabel:hover {
+  border-color: var(--muted-green);
+  background: var(--muted-green-bg);
+  color: var(--charcoal);
+}
+
+.uploadIcon { font-size: 24px; }
+.uploadHint { font-size: 10.5px; }
+
+.imagePreviewWrap {
+  position: relative;
+  width: 160px;
+  height: 150px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.imagePreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.clearImg {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressBar {
+  height: 4px;
+  background: var(--border-light);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progressBar > div {
+  height: 100%;
+  background: var(--muted-green);
+  transition: width 0.2s ease;
+}
+
+.formActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+/* Scan Mode */
+.scanUpload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 160px;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+  color: var(--slate);
+  font-size: 13px;
+}
+.scanUpload:hover {
+  border-color: var(--muted-green);
+  background: var(--muted-green-bg);
+}
+
+.scanResults { display: flex; flex-direction: column; gap: 14px; }
+
+.scannedList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.scannedItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all var(--transition);
+  user-select: none;
+}
+.scannedItem:hover { border-color: var(--muted-green); }
+
+.scannedItemSelected {
+  background: var(--muted-green-bg);
+  border-color: var(--muted-green);
+  color: var(--charcoal);
+}
+
+.scanSave {
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.catFilter {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.catBtn {
+  padding: 5px 14px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  color: var(--charcoal-light);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.catBtn:hover { border-color: var(--muted-green); color: var(--charcoal); background: var(--muted-green-bg); }
+.catBtnActive {
+  background: var(--charcoal);
+  color: var(--cream);
+  border-color: var(--charcoal);
+}
+
+/* Menu Grid */
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.menuCard {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  border-radius: var(--radius-md);
+}
+.menuCard:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10), 0 2px 6px rgba(0,0,0,0.06);
+  transform: translateY(-3px);
+}
+
+.menuImg {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.menuImgPlaceholder {
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(135deg, var(--cream-dark) 0%, #E8DFD0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.menuCardBody {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.menuName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--charcoal);
+  line-height: 1.3;
+}
+
+.menuDesc {
+  font-size: 12px;
+  color: var(--slate);
+  line-height: 1.4;
+}
+
+.menuCardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-light);
+}
+
+.menuPrice {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--muted-green);
+  letter-spacing: -0.02em;
+}

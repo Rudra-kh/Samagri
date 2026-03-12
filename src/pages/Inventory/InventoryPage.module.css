@@ -1,0 +1,421 @@
+.root {
+  padding: 24px 28px;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pageHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.headActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.stockCard {
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border-light);
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.stockCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  border-color: var(--olive-green);
+}
+
+.card_expired {
+  border-color: var(--danger);
+}
+
+.card_expiring {
+  border-color: var(--warning);
+}
+
+.cardImageWrap {
+  position: relative;
+  height: 145px;
+  background: #f1ebdf;
+}
+
+.cardImage,
+.modalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardImageFallback,
+.modalImageFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  color: var(--slate);
+  background: linear-gradient(135deg, #f2ede3, #e7dfd1);
+}
+
+.cardTopBadges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.qtyBadge,
+.statusBadge {
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+}
+
+.qtyBadge {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--charcoal);
+}
+
+.statusBadge {
+  color: #fff;
+}
+
+.statusExpired {
+  background: rgba(202, 70, 70, 0.92);
+}
+
+.statusExpiring {
+  background: rgba(214, 140, 45, 0.92);
+}
+
+.cardBody {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.cardDesc {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--slate);
+  line-height: 1.45;
+}
+
+.cardMeta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.metaLabel {
+  display: block;
+  font-size: 11px;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+
+.metaValue {
+  display: block;
+  font-size: 12px;
+  color: var(--charcoal);
+  font-weight: 600;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.priceLabel {
+  display: block;
+  font-size: 11px;
+  color: var(--slate);
+  margin-bottom: 4px;
+}
+
+.priceValue {
+  color: var(--olive-green);
+  font-size: 16px;
+}
+
+.priceUnit {
+  font-size: 12px;
+  color: var(--slate);
+  font-weight: 600;
+}
+
+.cardActions {
+  display: flex;
+  gap: 6px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 50;
+}
+
+.modal {
+  width: min(820px, 100%);
+  background: var(--bg-surface);
+  border-radius: 24px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(260px, 320px) 1fr;
+  position: relative;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--charcoal);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modalMedia {
+  min-height: 100%;
+  background: #f1ebdf;
+}
+
+.modalBody {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.modalTitle {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  line-height: 1.1;
+  color: var(--charcoal);
+}
+
+.modalDesc {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+.modalQty {
+  background: var(--cream);
+  color: var(--olive-green);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.modalStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.statCard,
+.dealerPanel {
+  background: var(--cream);
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.statValue {
+  display: block;
+  margin-top: 6px;
+  font-size: 20px;
+  color: var(--charcoal);
+}
+
+.panelTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+}
+
+.panelText {
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.5;
+}
+
+@media (max-width: 920px) {
+  .modal {
+    grid-template-columns: 1fr;
+  }
+
+  .modalMedia {
+    height: 240px;
+  }
+
+  .modalStats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageHead {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .headActions {
+    flex-wrap: wrap;
+  }
+
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Form Card */
+.formCard {
+  padding: 24px 26px;
+  animation: fadeIn 0.2s ease;
+  border-left: 3px solid var(--muted-green-light);
+}
+
+.formTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 18px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formRow {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.formRow > * {
+  min-width: 140px;
+}
+
+.totalCostDisplay {
+  padding: 9px 12px;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--cream);
+  color: var(--muted-green);
+  font-size: 14px;
+  font-weight: 700;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.01em;
+}
+
+.formActions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+
+/* Table rows */
+.row_expired {
+  background: #FDF4F4 !important;
+  border-left: 3px solid var(--danger) !important;
+}
+.row_expiring {
+  background: #FEFAF0 !important;
+  border-left: 3px solid var(--warning) !important;
+}
+
+.itemName {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--charcoal);
+}
+
+.itemDesc {
+  font-size: 11.5px;
+  color: var(--slate);
+  margin-top: 2px;
+}
+
+.expiryCell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.dealerCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.dealerName {
+  font-size: 13px;
+  color: var(--charcoal);
+}
+.dealerPhone {
+  font-size: 11.5px;
+  color: var(--slate);
+}

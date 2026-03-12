@@ -1,0 +1,199 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  padding: 24px;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dot pattern layer */
+.dotPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  color: var(--charcoal);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Card */
+.card {
+  position: relative;
+  z-index: 1;
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  padding: 40px 40px 36px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 16px -4px rgba(139,111,78,0.20), 0 4px 8px -2px rgba(139,111,78,0.10);
+  animation: fadeIn 0.28s ease;
+}
+
+/* Branding */
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+
+.brandLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.spiceIcon {
+  color: var(--olive-green);
+  width: 32px;
+  height: 32px;
+}
+
+.brandName {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.brandTagline {
+  font-size: 13px;
+  color: var(--slate);
+  margin: 0;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--charcoal);
+}
+
+.input {
+  height: 44px;
+  width: 100%;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #fff;
+  color: var(--charcoal);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+.input:focus {
+  outline: none;
+  border-color: var(--olive-green);
+  box-shadow: 0 0 0 3px rgba(92,107,58,0.14);
+}
+.input::placeholder {
+  color: var(--slate);
+  opacity: 0.65;
+}
+
+/* Password field with eye toggle */
+.passwordWrap {
+  position: relative;
+}
+
+.inputWithIcon {
+  padding-right: 44px;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--slate);
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  transition: color var(--transition);
+}
+.eyeBtn:hover { color: var(--charcoal); }
+
+/* Error */
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--danger-bg);
+  border: 1px solid rgba(193,50,50,0.18);
+  border-left: 3px solid var(--danger);
+  border-radius: var(--radius-sm);
+  color: var(--danger);
+  padding: 10px 14px;
+  font-size: 13px;
+}
+
+/* Submit */
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  width: 100%;
+  background: var(--olive-green);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 4px;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+  box-shadow: var(--shadow-md);
+}
+.submitBtn:hover:not(:disabled) {
+  background: var(--olive-green-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+.submitBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+.submitBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  z-index: 1;
+  font-size: 12px;
+  color: var(--slate);
+  opacity: 0.7;
+}
+
